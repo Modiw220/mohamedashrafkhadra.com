@@ -63,11 +63,24 @@ export default function GraphicDesignPage() {
     '/Graphic%20Design/49.jpg',
   ];
 
+  const pizzaHomeSlides = [
+    '/Graphic%20Design/50.png',
+    '/Graphic%20Design/51.png',
+    '/Graphic%20Design/52.png',
+    '/Graphic%20Design/53.png',
+    '/Graphic%20Design/54.png',
+    '/Graphic%20Design/55.png',
+    '/Graphic%20Design/56.png',
+    '/Graphic%20Design/57.png',
+    '/Graphic%20Design/58.png',
+  ];
+
   const [deliveCurrent, setDeliveCurrent] = useState(0);
   const [sawwahCurrent, setSawwahCurrent] = useState(0);
   const [pearlCurrent, setPearlCurrent] = useState(0);
   const [translationCurrent, setTranslationCurrent] = useState(0);
   const [pioneersCurrent, setPioneersCurrent] = useState(0);
+  const [pizzaHomeCurrent, setPizzaHomeCurrent] = useState(0);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   function handlePrev(slides: string[], setCurrent: Dispatch<SetStateAction<number>>) {
@@ -180,6 +193,14 @@ export default function GraphicDesignPage() {
           </p>
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+            <CarouselItem
+              title="Pizza Home"
+              slides={pizzaHomeSlides}
+              current={pizzaHomeCurrent}
+              setCurrent={setPizzaHomeCurrent}
+              openLightbox={setLightboxSrc}
+            />
+
             <CarouselItem
               title="DeliveGo Driver Recruitment"
               slides={deliveGoSlides}
